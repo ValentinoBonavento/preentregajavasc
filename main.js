@@ -6,7 +6,7 @@ class Persona {
     }
 }
 const arrayPersonas = []
-// quemar unas 3500 calorías para perder un kilogramo de grasa
+
 let pesoPerder = prompt("Cuanto peso quieres perder")
 while (isNaN(pesoPerder) || pesoPerder < 1 || pesoPerder > 70) {
     alert("Ingresar valores numericos entre el 1 y 70")
@@ -32,6 +32,7 @@ while (actividad != 1 && actividad != 2) {
     gimnasioLeve()
 }
 
+// quemar unas 3500 calorías para perder un kilogramo de grasa
 function deporteIntenso(){
     let calorias = (pesoPerder * 3500)
     let caloriasDiarias = (calorias/900).toFixed(0)
