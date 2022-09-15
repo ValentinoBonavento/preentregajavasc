@@ -63,4 +63,7 @@ function gimnasioLeve(){
 const especificaciones = new Persona(pesoPerder, intensidad, actividad)
 arrayPersonas.push(especificaciones)
 console.log(arrayPersonas)
+arrayPersonas.forEach(function(contexto){
+console.log(contexto)
+})
 
