@@ -7,10 +7,10 @@ class Persona {
 }
 const arrayPersonas = []
 
-let pesoPerder = prompt("Cuanto peso quieres perder")
+let pesoPerder = prompt("Cuantos kilos quieres perder")
 while (isNaN(pesoPerder) || pesoPerder < 1 || pesoPerder > 70) {
     alert("Ingresar valores numericos entre el 1 y 70")
-    pesoPerder = prompt("Cuanto peso quieres perder")
+    pesoPerder = prompt("Cuantos kilos quieres perder")
 }
 
 let intensidad = prompt("Elige la intensidad de la actividad fisica \n1) Intensa\n2) Leve")
@@ -36,27 +36,27 @@ while (actividad != 1 && actividad != 2) {
 function deporteIntenso(){
     let calorias = (pesoPerder * 3500)
     let caloriasDiarias = (calorias/900).toFixed(0)
-    console.log(`Tendrias que hacer ${caloriasDiarias} dias de deporte intenso para perder ${pesoPerder} kilos`)
-    alert(`Tendrias que hacer ${caloriasDiarias} dias de deporte intenso para perder ${pesoPerder} kilos`)
+    console.log(`Tendrias que hacer ${caloriasDiarias} dias de deporte intenso para perder ${pesoPerder} kilos, bajo una dieta de deficit calorico`)
+    alert(`Tendrias que hacer ${caloriasDiarias} dias de deporte intenso para perder ${pesoPerder} kilos, bajo una dieta de deficit calorico`)
 }
 function deporteLeve(){
     let calorias = (pesoPerder * 3500)
     let caloriasDiarias = (calorias/500).toFixed(0)
-    console.log(`Tendrias que hacer ${caloriasDiarias} dias de deporte leve para perder ${pesoPerder} kilos`)
-    alert(`Tendrias que hacer ${caloriasDiarias} dias de deporte leve para perder ${pesoPerder} kilos`) 
+    console.log(`Tendrias que hacer ${caloriasDiarias} dias de deporte leve para perder ${pesoPerder} kilos, bajo una dieta de deficit calorico`)
+    alert(`Tendrias que hacer ${caloriasDiarias} dias de deporte leve para perder ${pesoPerder} kilos, bajo una dieta de deficit calorico`) 
 }
 function gimansioIntenso(){
     let calorias = (pesoPerder * 3500)
     let caloriasDiarias = (calorias/700).toFixed(0)
-    console.log(`Tendrias que hacer ${caloriasDiarias} dias de gimnasio intenso para perder ${pesoPerder} kilos`)
-    alert(`Tendrias que hacer ${caloriasDiarias} dias de gimnasio intenso para perder ${pesoPerder} kilos`)
+    console.log(`Tendrias que hacer ${caloriasDiarias} dias de gimnasio intenso para perder ${pesoPerder} kilos, bajo una dieta de deficit calorico`)
+    alert(`Tendrias que hacer ${caloriasDiarias} dias de gimnasio intenso para perder ${pesoPerder} kilos, bajo una dieta de deficit calorico`)
 
 }
 function gimnasioLeve(){
     let calorias = (pesoPerder * 3500)
     let caloriasDiarias = (calorias/300).toFixed(0)
-    console.log(`Tendrias que hacer ${caloriasDiarias} dias de gimnasio leve para perder ${pesoPerder} kilos`)
-    alert(`Tendrias que hacer ${caloriasDiarias} dias de gimnasio leve para perder ${pesoPerder} kilos`)
+    console.log(`Tendrias que hacer ${caloriasDiarias} dias de gimnasio leve para perder ${pesoPerder} kilos, bajo una dieta de deficit calorico`)
+    alert(`Tendrias que hacer ${caloriasDiarias} dias de gimnasio leve para perder ${pesoPerder} kilos, bajo una dieta de deficit calorico`)
 }
 
 
