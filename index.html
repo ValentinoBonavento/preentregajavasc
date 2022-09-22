@@ -7,7 +7,32 @@
     <title>Document</title>
 </head>
 <body>
-  
+    <form id="formulario">
+        <label for="nombre">nombre del cliente </label>
+        <input id="nombre" type="text">
+        <br><br>
+
+        <label for="peso">Kilos que quieras perder</label>
+        <input id="peso" type="number">
+        <br><br>
+
+        <label for="actividad">actividad </label>
+        <select id="actividad" type="text">
+            <option value="1">deporte</option>
+            <option value="2">gimansio</option>
+        </select>
+
+        <label for="intensidad">intensidad </label>
+        <select id="intensidad" type="text">
+            <option value="1">inteso</option>
+            <option value="2">leve</option>
+        </select>
+        <button type="submit">calcular</button>
+    </form>
+
+    <div>
+        <div id="infoUsuarios"></div>
+    </div>
     <script src="./main.js"></script>
 </body>
 </html>

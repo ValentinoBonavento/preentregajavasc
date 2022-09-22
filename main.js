@@ -1,69 +1,81 @@
 class Persona {
-    constructor(peso, intensidad, actividad) {
+    constructor(nombre, peso, intensidad, actividad) {
+        this.nombre = nombre
         this.peso = peso;
         this.intensidad = intensidad;
         this.actividad = actividad;
     }
-}
-const arrayPersonas = []
 
-let pesoPerder = prompt("Cuantos kilos quieres perder")
-while (isNaN(pesoPerder) || pesoPerder < 1 || pesoPerder > 70) {
-    alert("Ingresar valores numericos entre el 1 y 70")
-    pesoPerder = prompt("Cuantos kilos quieres perder")
+    deporteIntenso() {
+        let calorias = (this.peso * 3500)
+        let dias11 = (calorias / 900).toFixed(0)
+        console.log(`Tendrias que hacer ${dias11} dias de deporte intenso para perder ${peso} kilos, bajo una dieta de deficit calorico`)
+        return dias11
+    }
+    
+    deporteLeve() {
+        let calorias = (this.peso * 3500)
+        let dias12 = (calorias / 500).toFixed(0)
+        console.log(`Tendrias que hacer ${dias12} dias de deporte leve para perder ${peso} kilos, bajo una dieta de deficit calorico`)
+        return dias12
+    }
+    
+    gimnasioIntenso() {
+        let calorias = (this.peso * 3500)
+        let dias21 = (calorias / 700).toFixed(0)
+        console.log(`Tendrias que hacer ${dias21} dias de gimnasio intenso para perder ${peso} kilos, bajo una dieta de deficit calorico`)
+        return dias21
+    }
+    
+    gimnasioLeve() {
+        let calorias = (this.peso * 3500)
+        let dias22 = (calorias / 300).toFixed(0)
+        console.log(`Tendrias que hacer ${dias22} dias de gimnasio leve para perder ${peso} kilos, bajo una dieta de deficit calorico`)
+        return dias22
+    }
+    
 }
+const personas = []
 
-let intensidad = prompt("Elige la intensidad de la actividad fisica \n1) Intensa\n2) Leve")
-while (intensidad != 1 && intensidad != 2) {
-    alert("Ingresar 1 o 2")
-    intensidad = prompt("Elige la intensidad de la actividad fisica \n1) Intensa\n2) Leve")
-}
-let actividad = prompt("Que tipo de actividad desea realizar \n 1) Deporte\n 2) Gimnasio")
-while (actividad != 1 && actividad != 2) {
-    alert("Ingresar 1 o 2")
-    actividad = prompt("Que tipo de actividad desea realizar \n 1) Deporte\n 2) Gimnasio")
-} if (intensidad == 1 && actividad == 1) {
-    deporteIntenso()
-} else if (intensidad == 1 && actividad == 2) {
-    gimansioIntenso()
-} else if (intensidad == 2 && actividad == 1) {
-    deporteLeve()
-} else if (intensidad == 2 && actividad == 2) {
-    gimnasioLeve()
-}
+const formulario = document.getElementById("formulario")
 
-// quemar unas 3500 calorías para perder un kilogramo de grasa
-function deporteIntenso(){
-    let calorias = (pesoPerder * 3500)
-    let caloriasDiarias = (calorias/900).toFixed(0)
-    console.log(`Tendrias que hacer ${caloriasDiarias} dias de deporte intenso para perder ${pesoPerder} kilos, bajo una dieta de deficit calorico`)
-    alert(`Tendrias que hacer ${caloriasDiarias} dias de deporte intenso para perder ${pesoPerder} kilos, bajo una dieta de deficit calorico`)
-}
-function deporteLeve(){
-    let calorias = (pesoPerder * 3500)
-    let caloriasDiarias = (calorias/500).toFixed(0)
-    console.log(`Tendrias que hacer ${caloriasDiarias} dias de deporte leve para perder ${pesoPerder} kilos, bajo una dieta de deficit calorico`)
-    alert(`Tendrias que hacer ${caloriasDiarias} dias de deporte leve para perder ${pesoPerder} kilos, bajo una dieta de deficit calorico`) 
-}
-function gimansioIntenso(){
-    let calorias = (pesoPerder * 3500)
-    let caloriasDiarias = (calorias/700).toFixed(0)
-    console.log(`Tendrias que hacer ${caloriasDiarias} dias de gimnasio intenso para perder ${pesoPerder} kilos, bajo una dieta de deficit calorico`)
-    alert(`Tendrias que hacer ${caloriasDiarias} dias de gimnasio intenso para perder ${pesoPerder} kilos, bajo una dieta de deficit calorico`)
+formulario.addEventListener("submit", (e) => {
+    e.preventDefault();
+    agregar_persona();  
+})
 
-}
-function gimnasioLeve(){
-    let calorias = (pesoPerder * 3500)
-    let caloriasDiarias = (calorias/300).toFixed(0)
-    console.log(`Tendrias que hacer ${caloriasDiarias} dias de gimnasio leve para perder ${pesoPerder} kilos, bajo una dieta de deficit calorico`)
-    alert(`Tendrias que hacer ${caloriasDiarias} dias de gimnasio leve para perder ${pesoPerder} kilos, bajo una dieta de deficit calorico`)
+function agregar_persona() {
+    const nombre = document.getElementById("nombre").value;
+    const peso = document.getElementById("peso").value;
+    const intensidad = document.getElementById("intensidad").value;
+    const actividad = document.getElementById("actividad").value;
+
+    const persona = new Persona(nombre, peso, intensidad, actividad)
+    personas.push(persona)
+    localStorage.setItem("personas", JSON.stringify(personas))
+    formulario.reset();
 }
 
+const resultado = document.getElementById("infoUsuarios");
 
-const especificaciones = new Persona(pesoPerder, intensidad, actividad)
-arrayPersonas.push(especificaciones)
-console.log(arrayPersonas)
-arrayPersonas.forEach(function(contexto){
-console.log(contexto)
+const mostrar_info = (persona) => {
+    let aux = "";
+    aux += `<p class="resultado"> ${persona.nombre} tu IMC es el siguiente: </p>`
+    if (intensidad == 1 && actividad == 1) {
+        `<p class="resultado"> IMC: ${persona.deporteIntenso()} </p>`
+    } else if (intensidad == 1 && actividad == 2) {
+        `<p class="resultado"> IMC: ${persona.gimnasioIntenso()} </p>`
+    } else if (intensidad == 2 && actividad == 1) {
+        `<p class="resultado"> IMC: ${persona.deporteLeve()} </p>`
+    } else if (intensidad == 2 && actividad == 2) {
+        `<p class="resultado"> IMC: ${persona.gimnasioLeve()} </p>`
+    }
+    resultado.innerHTML = aux;
+}
+
+
+console.log(personas)
+personas.forEach(function (contexto) {
+    console.log(contexto)
 })
 
