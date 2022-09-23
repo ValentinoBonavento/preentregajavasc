@@ -77,11 +77,6 @@ function agregar_persona() {
 }
 
 const resultado = document.getElementById("infoUsuarios");
-
-
-    
-    
-  
     
 console.log(personas)
 personas.forEach(function (contexto) {
