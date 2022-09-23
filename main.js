@@ -40,7 +40,7 @@ function agregar_persona() {
 
     function deporteIntenso() {
         let calorias = (peso * 3500)
-        let dias = (calorias / 900).toFixed(1)
+        let dias = (calorias / 900).toFixed(0)
         console.log(`Tendrias que hacer ${dias} dias de deporte intenso para perder ${peso} kilos, bajo una dieta de deficit calorico`)
         let aux = ""
         aux += `<p class="resultado"> Tendrias que hacer ${dias} dias de deporte leve para perder ${peso} kilos, bajo una dieta de deficit calorico </p>`
