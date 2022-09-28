@@ -28,7 +28,8 @@ function agregar_persona() {
     personas.push(persona)
     localStorage.setItem("personas", JSON.stringify(personas))
     formulario.reset();
-    if (intensidad == 1 && actividad == 1) {
+    if(peso > 1 && peso < 200){
+     if (intensidad == 1 && actividad == 1) {
         deporteIntenso()
     } else if (intensidad == 1 && actividad == 2) {
         deporteLeve()
@@ -36,6 +37,12 @@ function agregar_persona() {
         gimnasioIntenso()
     } else if (intensidad == 2 && actividad == 2) {
         gimnasioLeve()
+    }
+    }
+    else{
+        let aux = ""
+        aux += `<p class="maximo"> Por favor ingresar valores numericos del 1 al 200 </p>`
+        resultado1.innerHTML = aux; 
     }
 
     function deporteIntenso() {
@@ -77,6 +84,7 @@ function agregar_persona() {
 }
 
 const resultado = document.getElementById("infoUsuarios");
+const resultado1 = document.getElementById("minimo")
     
 console.log(personas)
 personas.forEach(function (contexto) {
