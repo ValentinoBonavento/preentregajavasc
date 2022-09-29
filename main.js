@@ -32,9 +32,9 @@ function agregar_persona() {
      if (intensidad == 1 && actividad == 1) {
         deporteIntenso()
     } else if (intensidad == 1 && actividad == 2) {
-        deporteLeve()
-    } else if (intensidad == 2 && actividad == 1) {
         gimnasioIntenso()
+    } else if (intensidad == 2 && actividad == 1) {
+        deporteLeve()
     } else if (intensidad == 2 && actividad == 2) {
         gimnasioLeve()
     }
