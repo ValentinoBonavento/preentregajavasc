@@ -44,14 +44,14 @@ function agregar_persona() {
         aux += `<p class="maximo"> Por favor ingresar valores numericos del 1 al 200 </p>`
         resultado1.innerHTML = aux; 
     }
-
+    
     function deporteIntenso() {
         let calorias = (peso * 3500)
         let dias = (calorias / 900).toFixed(0)
         console.log(`Tendrias que hacer ${dias} dias de deporte intenso para perder ${peso} kilos, bajo una dieta de deficit calorico`)
         let aux = ""
-        aux += `<p class="resultado"> Tendrias que hacer ${dias} dias de deporte leve para perder ${peso} kilos, bajo una dieta de deficit calorico </p>`
-        resultado.innerHTML = aux;
+        aux += `<p class="resultado"> Tendrias que hacer ${dias} dias de deporte intenso para perder ${peso} kilos, bajo una dieta de deficit calorico </p>`
+        resultado.innerHTML = aux;     
     }
     
     function deporteLeve() {
@@ -61,7 +61,7 @@ function agregar_persona() {
         let aux = ""
         aux += `<p class="resultado"> Tendrias que hacer ${dias} dias de deporte leve para perder ${peso} kilos, bajo una dieta de deficit calorico </p>`
         resultado.innerHTML = aux;
-         
+           
     }
     
     function gimnasioIntenso() {
@@ -69,8 +69,8 @@ function agregar_persona() {
         let dias = (calorias / 700).toFixed(0)
         console.log(`Tendrias que hacer ${dias} dias de gimnasio intenso para perder ${peso} kilos, bajo una dieta de deficit calorico`)
         let aux = ""
-        aux += `<p class="resultado"> Tendrias que hacer ${dias} dias de deporte leve para perder ${peso} kilos, bajo una dieta de deficit calorico </p>`
-        resultado.innerHTML = aux; 
+        aux += `<p class="resultado"> Tendrias que hacer ${dias} dias de gimnasio intenso para perder ${peso} kilos, bajo una dieta de deficit calorico </p>`
+        resultado.innerHTML = aux;      
     }
     
     function gimnasioLeve() {
@@ -78,8 +78,8 @@ function agregar_persona() {
         let dias = (calorias / 300).toFixed(0)
         console.log(`Tendrias que hacer ${dias} dias de gimnasio leve para perder ${peso} kilos, bajo una dieta de deficit calorico`)
         let aux = ""
-        aux += `<p class="resultado"> Tendrias que hacer ${dias} dias de deporte leve para perder ${peso} kilos, bajo una dieta de deficit calorico </p>`
-        resultado.innerHTML = aux; 
+        aux += `<p class="resultado"> Tendrias que hacer ${dias} dias de gimnasio leve para perder ${peso} kilos, bajo una dieta de deficit calorico </p>`
+        resultado.innerHTML = aux;       
     }
 }
 
