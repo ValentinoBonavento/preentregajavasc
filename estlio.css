@@ -1,4 +1,30 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+  }
 .maximo {
     color: red;
     font-size: small;
+}
+.formulario {
+    border: 1px solid black  ;
+    width: fit-content;
+    
+}
+header {
+    text-align: center;
+}
+.boton1{
+    text-align: center;
+    align-items: center;
+}
+.caja  {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.info{
+    text-align: center;
 }

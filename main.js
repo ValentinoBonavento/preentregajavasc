@@ -40,9 +40,11 @@ function agregar_persona() {
     }
     }
     else{
-        let aux = ""
-        aux += `<p class="maximo"> Por favor ingresar valores numericos del 1 al 200 </p>`
-        resultado1.innerHTML = aux; 
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Ingresar valores numericos del 1 al 200!',
+          })
     }
     
     function deporteIntenso() {
