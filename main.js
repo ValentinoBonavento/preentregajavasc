@@ -12,11 +12,36 @@ const formulario = document.getElementById("formulario")
 
 formulario.addEventListener("submit", (e) => {
     e.preventDefault();
-    agregar_persona();  
+    agregar_persona();      
 })
 
+const resultado3 = document.getElementById("contenedorRutinas")
+const resultado = document.getElementById("infoUsuarios");
+const resultado1 = document.getElementById("minimo")
+const vacio = 0
 
-function agregar_persona(datos) {
+const rutinas = './rutinas.json'
+
+fetch(rutinas)
+    .then(respuesta => respuesta.json())
+    .then((datos) => {
+        console.log(datos)
+        monstar_rutina(datos)
+    })
+    .catch(error => console.log(error))
+
+function monstar_rutina(datos){
+    datos.forEach(rutina => {
+        const p = document.createElement("p")
+        p.textContent = `${Object.keys(rutina)}:  ${Object.values(rutina)}`
+        p.className = "rutinas"
+        resultado3.appendChild(p)
+        
+    })
+}
+
+
+function agregar_persona() {
     const nombre = document.getElementById("nombre").value;
     const peso = document.getElementById("peso").value;
     const intensidad = document.getElementById("intensidad").value;
@@ -45,32 +70,6 @@ function agregar_persona(datos) {
         })
     }
      
-    const rutinas = './rutinas.json'
-
-    fetch(rutinas)
-        .then(respuesta => respuesta.json())
-        .then((datos) => {
-            console.log(datos)
-            mostrar_rutina_intensa(datos)
-        })
-        .catch(error => console.log(error))
-    
-        function mostrar_rutina_intensa(datos){
-            datos.forEach( rutinas => {
-            ejercicio += `<p class="resultado"> ${datos[2]} </p>`
-            resultado3.innerHTML = ejercicio ; 
-                })
-             
-        }
-        function mostrar_rutina_leve(datos){
-
-        }
-        function mostrar_deporte_intenso(datos){
-
-        }
-        function mostrar_deporte_leve(datos){
-
-        } 
 
     function deporteIntenso() {
             let calorias = (peso * 3500)
@@ -112,10 +111,7 @@ function agregar_persona(datos) {
     
     
 }
-const resultado3 = document.getElementById("contenedorRutinas")
-const resultado = document.getElementById("infoUsuarios");
-const resultado1 = document.getElementById("minimo")
-    
+
 console.log(personas)
 personas.forEach(function (contexto) {
     console.log(contexto)
