@@ -49,3 +49,8 @@ img.img2{
 a.img2{
 width: 100%;
 }
+
+div.contenido {
+    text-align: center;
+    justify-content: center;
+}
