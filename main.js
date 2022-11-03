@@ -20,7 +20,7 @@ const resultado = document.getElementById("infoUsuarios");
 const resultado1 = document.getElementById("minimo")
 const vacio = 0
 
-const rutinas = '../rutinas.json'
+const rutinas = './rutinas.json'
 
 fetch(rutinas)
     .then(respuesta => respuesta.json())
