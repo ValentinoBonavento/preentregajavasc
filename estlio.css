@@ -30,7 +30,7 @@ header {
 }
 
 img.img {
-width: 70%;
+width: 50%;
 }
 div.nav{
     text-align: center;
@@ -53,4 +53,25 @@ width: 100%;
 div.contenido {
     text-align: center;
     justify-content: center;
+}
+.info {
+    
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.rutinas {
+    border: 1px solid black;
+    height: 100px;
+    margin-bottom: 0px; 
+    width: 25%; 
+    display: flex;
+    height: 200px;
+}
+
+.resultado {
+    font-size: large;
+    font-weight: bolder;
 }

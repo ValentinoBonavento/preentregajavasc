@@ -51,7 +51,8 @@ function agregar_persona() {
     personas.push(persona)
     localStorage.setItem("personas", JSON.stringify(personas))
     formulario.reset();
-    if(peso > 1 && peso < 200){
+    
+   /* if(peso > 1 && peso < 200){
         if (intensidad == 1 && actividad == 1) {
             deporteIntenso()
         } else if (intensidad == 1 && actividad == 2) {
@@ -68,7 +69,13 @@ function agregar_persona() {
             title: 'Oops...',
             text: 'Ingresar valores numericos del 1 al 200!',
         })
-    }
+    } */
+
+    (peso > 1 && peso < 200) ? (intensidad == 1 && actividad == 1) ? deporteIntenso() : (intensidad == 1 && actividad == 2) ? gimnasioIntenso() : (intensidad == 2 && actividad == 1) ? deporteLeve() : (intensidad == 2 && actividad == 2) ?  gimnasioLeve() : null : Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Ingresar valores numericos del 1 al 200!',
+    })
      
 
     function deporteIntenso() {
